@@ -11,7 +11,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class QuestionDto {
-
     private String head;
     private List<Option> options;
     private Integer answerNo;
