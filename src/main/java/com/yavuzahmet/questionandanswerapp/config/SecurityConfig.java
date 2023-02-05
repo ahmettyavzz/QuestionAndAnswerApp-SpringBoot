@@ -45,9 +45,8 @@ public class SecurityConfig {
                 .cors().and()
                 .authorizeRequests(auth -> {
                     auth.antMatchers("/api/admin").hasAuthority("ADMIN");
-                    auth.antMatchers(HttpMethod.POST,"/v1/option/**").hasAuthority("ADMIN");
                     auth.antMatchers(HttpMethod.POST,"/v1/question/**").hasAuthority("ADMIN");
-                    auth.antMatchers("/api/user").hasAnyAuthority("ADMIN", "USER");
+                    auth.antMatchers(HttpMethod.GET,"/v1/question/**").hasAnyAuthority("ADMIN", "USER");
                     auth.anyRequest().authenticated();
                 })
                 .formLogin().disable()
@@ -63,7 +62,7 @@ public class SecurityConfig {
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().antMatchers("/api/public", "/user", "/api/auth/login");
+        return (web) -> web.ignoring().antMatchers( "/user", "/api/auth/login");
     }
 
     @Bean
