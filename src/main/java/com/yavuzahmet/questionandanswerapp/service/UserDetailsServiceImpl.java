@@ -1,7 +1,6 @@
 package com.yavuzahmet.questionandanswerapp.service;
 
 import com.yavuzahmet.questionandanswerapp.model.User;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,7 +11,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Service
-@Slf4j
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     private final UserService userService;

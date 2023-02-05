@@ -6,7 +6,6 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.yavuzahmet.questionandanswerapp.exception.ErrorStatusCode;
 import com.yavuzahmet.questionandanswerapp.exception.GeneralException;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,7 +14,6 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 
 @Service
-@Slf4j
 public class TokenService {
     @Value("${jwt-variables.KEY}")
     private String KEY;
